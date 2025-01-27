@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deadlock Avoidance Simulator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Graph Container -->
+
+    <!-- Include Vis.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Taskbar -->
+    <div class="taskbar">
+      <div class="logo">Deadlock Avoidance</div>
+      <nav>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="about-section">
+      <h2>About Deadlock Avoidance</h2>
+      <p>
+        Deadlock avoidance using a resource allocation graph ensures that
+        resource requests are granted only if they do not lead to a potential
+        deadlock. It is a critical concept in operating systems to prevent
+        processes from getting stuck waiting for resources indefinitely.
+      </p>
+    </div>
+
+    <!-- Deadlock Avoidance Simulator -->
+    <div class="input-section">
+      <h3>Deadlock Avoidance Simulator</h3>
+      <label for="processes">Processes (comma-separated):</label>
+      <input type="text" id="processes" placeholder="e.g., P1, P2, P3" />
+      <label for="resources">Resources (comma-separated):</label>
+      <input type="text" id="resources" placeholder="e.g., R1, R2" />
+      <label for="allocations"
+        >Allocations (format: P->R, comma-separated):</label
+      >
+      <input type="text" id="allocations" placeholder="e.g., P1->R1, P2->R2" />
+      <label for="requests">Requests (format: P->R, comma-separated):</label>
+      <input type="text" id="requests" placeholder="e.g., P3->R1" />
+      <button id="simulate-btn">Simulate</button>
+    </div>
+
+    <!-- Output Section -->
+    <div class="output-section">
+      <h3>Simulation Result:</h3>
+      <div id="output"></div>
+    </div>
+
+    <div
+      id="graph-container"
+      style="
+        height: 500px;
+        background-color: white;
+        border: 1px solid black;
+        margin-top: 20px;
+        display: none;
+      "
+    ></div>
+    <!-- Footer -->
+    <div class="footer">
+      <p>© 2024 Deadlock Avoidance Simulator. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
